@@ -9,9 +9,6 @@
 
 # dependencies
 /node_modules
-/framework/angular-app/node_modules
-/framework/react-app/node_modules
-/framework/vuejs-app/node_modules
 
 # profiling files
 chrome-profiler-events*.json
