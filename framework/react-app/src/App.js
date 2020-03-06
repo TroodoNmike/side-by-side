@@ -1,23 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HelloWorld from "./components/HelloWorld";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <div className="App-banner">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h3>React</h3>
+          </div>
+          <h3>Basic component</h3>
+          <pre>&lt;HelloWorld /&gt;</pre>
+          <HelloWorld />
       </header>
     </div>
   );

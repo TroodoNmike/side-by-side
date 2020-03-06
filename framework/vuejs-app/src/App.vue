@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="banner">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <h3>Vue.js</h3>
+    </div>
+    <h3>Basic component</h3>
+    <pre style="text-align: center">&lt;HelloWorld /&gt;</pre>
+    <HelloWorld msg="NA"/>
   </div>
 </template>
 
@@ -23,6 +28,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+#banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#banner img {
+  max-width: 50px;
+}
+
 </style>
