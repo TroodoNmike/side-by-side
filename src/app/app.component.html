@@ -1,5 +1,17 @@
-<div class="frame_items">
-    <object data="http://localhost:4200" width="100%" height="800" type="text/html">Could not load</object>
-    <object data="http://localhost:8080" width="100%" height="800" type="text/html">Could not load</object>
-    <object data="http://localhost:3000" width="100%" height="800" type="text/html">Could not load</object>
+<div class="d-flex flex-row align-items-stretch">
+    <div class="w-100">
+<!--        <object data="http://localhost:4200" width="100%" height="330" type="text/html">Could not load</object>-->
+        <object data="angular-app" width="100%" height="330" type="text/html">Could not load</object>
+        <ngbd-code [code]="data" [lang]="'typescript'"></ngbd-code>
+    </div>
+    <div class="w-100">
+<!--        <object data="http://localhost:8080" width="100%" height="330" type="text/html">Could not load</object>-->
+        <object data="vuejs-app" width="100%" height="330" type="text/html">Could not load</object>
+        <ngbd-code [code]="data2" [lang]="'javascript'"></ngbd-code>
+    </div>
+    <div class="w-100">
+<!--        <object data="http://localhost:3000" width="100%" height="330" type="text/html">Could not load</object>-->
+        <object data="react-app" width="100%" height="330" type="text/html">Could not load</object>
+        <ngbd-code [code]="data3" [lang]="'javascript'"></ngbd-code>
+    </div>
 </div>

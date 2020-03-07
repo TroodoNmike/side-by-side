@@ -6,7 +6,7 @@
     </div>
     <h3>Basic component</h3>
     <pre style="text-align: center">&lt;HelloWorld /&gt;</pre>
-    <HelloWorld msg="NA"/>
+    <HelloWorld />
   </div>
 </template>
 
