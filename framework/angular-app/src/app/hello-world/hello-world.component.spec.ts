@@ -1,11 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
+import { HelloWorldComponent } from './hello-world.component';
 
-import { HelloWorldComponent } from './basic.component';
-
-describe('BasicComponent', () => {
-  let component: HelloWorldComponent;
-  let fixture: ComponentFixture<HelloWorldComponent>;
-
+describe('HelloWorldComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HelloWorldComponent ]
@@ -13,13 +9,16 @@ describe('BasicComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HelloWorldComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should create', () => {
+    const fixture = TestBed.createComponent(HelloWorldComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(HelloWorldComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('I am component');
   });
 });

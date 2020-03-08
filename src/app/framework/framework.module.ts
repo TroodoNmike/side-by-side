@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FrameworkComponent } from './framework.component';
-import { CodeModule } from '../../shared/code/code.module';
 
 @NgModule({
     declarations: [FrameworkComponent],
@@ -9,8 +8,7 @@ import { CodeModule } from '../../shared/code/code.module';
         FrameworkComponent
     ],
     imports: [
-        CommonModule,
-        CodeModule
+        CommonModule
     ]
 })
 export class FrameworkModule { }
