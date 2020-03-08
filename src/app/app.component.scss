@@ -1,3 +1,11 @@
-:host {
+::ng-deep {
 
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-size: 0.9em;
+  }
+
+  pre[class*="language-"] {
+    margin: 0.75rem 0 0 0;
+  }
 }

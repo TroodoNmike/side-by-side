@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  sideBySide: ['angular-app', 'vuejs-app', 'react-app']
 };

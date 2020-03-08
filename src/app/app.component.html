@@ -6,7 +6,7 @@
                 <div class="card-body pt-3 p-0">
 
                     <app-framework
-                            url="http://localhost:4200"
+                            [url]="sideBySide[0]"
                             description="&lt;app-hello-world&gt;&lt;/app-hello-world&gt;"
                     >
                         <img
@@ -54,7 +54,7 @@
             <div class="card">
                 <div class="card-body pt-3 p-0">
                     <app-framework
-                            url="http://localhost:8080"
+                            [url]="sideBySide[1]"
                             description="&lt;HelloWorld /&gt;"
                     >
                         <img
@@ -96,7 +96,7 @@
                     <!--        <object data="react-app" width="100%" height="330" type="text/html">Could not load</object>-->
 
                     <app-framework
-                            url="http://localhost:3000"
+                            [url]="sideBySide[2]"
                             description="&lt;HelloWorld /&gt;"
                     >
                         <img

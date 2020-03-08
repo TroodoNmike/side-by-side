@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'compare';
+  sideBySide = environment.sideBySide;
   data0 = require('!raw-loader!./../../framework/angular-app/src/app/app.component.html').default;
   data = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component').default;
   datab = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component.html').default;
