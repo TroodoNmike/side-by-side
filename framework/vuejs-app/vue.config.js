@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: '/side-by-side/vuejs-app'
-}
+    publicPath: process.env.NODE_ENV === 'production' ? '/side-by-side/vuejs-app' : '/'
+};
 

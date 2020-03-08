@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeHighlightService } from './code-highlight.service';
-import { NgbdCodeComponent } from './code.component';
+import { CodeComponent } from './code.component';
 
 @NgModule({
     declarations: [
-        NgbdCodeComponent
+        CodeComponent
     ],
     exports: [
-        NgbdCodeComponent
+        CodeComponent
     ],
     imports: [
         CommonModule,
@@ -17,4 +17,4 @@ import { NgbdCodeComponent } from './code.component';
         CodeHighlightService
     ]
 })
-export class NgbdCodeModule {}
+export class CodeModule {}

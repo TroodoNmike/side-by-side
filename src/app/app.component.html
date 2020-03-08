@@ -1,17 +1,154 @@
-<div class="d-flex flex-row align-items-stretch">
-    <div class="w-100">
-<!--        <object data="http://localhost:4200" width="100%" height="330" type="text/html">Could not load</object>-->
-        <object data="angular-app" width="100%" height="330" type="text/html">Could not load</object>
-        <ngbd-code [code]="data" [lang]="'typescript'"></ngbd-code>
-    </div>
-    <div class="w-100">
-<!--        <object data="http://localhost:8080" width="100%" height="330" type="text/html">Could not load</object>-->
-        <object data="vuejs-app" width="100%" height="330" type="text/html">Could not load</object>
-        <ngbd-code [code]="data2" [lang]="'javascript'"></ngbd-code>
-    </div>
-    <div class="w-100">
-<!--        <object data="http://localhost:3000" width="100%" height="330" type="text/html">Could not load</object>-->
-        <object data="react-app" width="100%" height="330" type="text/html">Could not load</object>
-        <ngbd-code [code]="data3" [lang]="'javascript'"></ngbd-code>
+
+<div class="container-fluid mt-5 pt-3">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body pt-3 p-0">
+
+                    <app-framework
+                            url="http://localhost:4200"
+                            description="&lt;app-hello-world&gt;&lt;/app-hello-world&gt;"
+                    >
+                        <img
+                                width="40"
+                                alt="Angular Logo"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+                        />
+                        <span>ANGULAR</span>
+                    </app-framework>
+                    <ul class="nav nav-tabs mx-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home0">app.component.html</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hello World</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" data-toggle="tab" href="#home">hello-world.component.ts</a>
+                                <a class="dropdown-item" data-toggle="tab" href="#menu1">hello-world.component.html</a>
+                                <a class="dropdown-item" data-toggle="tab" href="#menu2">hello-world.module.ts</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home0">
+                            <app-code [code]="data0" [lang]="'html'"></app-code>
+                        </div>
+                        <div class="tab-pane fade" id="home">
+                            <app-code [code]="data" [lang]="'typescript'"></app-code>
+                        </div>
+                        <div class="tab-pane fade" id="menu1">
+                            <app-code [code]="datab" [lang]="'html'"></app-code>
+                        </div>
+                        <div class="tab-pane fade" id="menu2">
+                            <app-code [code]="datac" [lang]="'typescript'"></app-code>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-4 px-0">
+            <div class="card">
+                <div class="card-body pt-3 p-0">
+                    <app-framework
+                            url="http://localhost:8080"
+                            description="&lt;HelloWorld /&gt;"
+                    >
+                        <img
+                                width="40"
+                                alt="Vue.js logo"
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAKRlWElmTU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgExAAIAAAAfAAAAWodpAAQAAAABAAAAegAAAAAAAABIAAAAAQAAAEgAAAABQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAUKADAAQAAAABAAAAUAAAAABIW3d1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEEmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjk5NkJCOEY5NzYxNjExRTVBODRFOEZCMTY0OTE2MkQ4PC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06RGVyaXZlZEZyb20gcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICA8c3RSZWY6aW5zdGFuY2VJRD54bXAuaWlkOjY1NkExMjc5NzY5MjExRTM5MTg5OEQ5MEJGOENFNDc2PC9zdFJlZjpp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"
+                        />
+
+                        <span>Vue.js</span>
+                    </app-framework>
+
+                    <!--        <object data="http://localhost:8080" width="100%" height="330" type="text/html">Could not load</object>-->
+                    <!--        <object data="vuejs-app" width="100%" height="330" type="text/html">Could not load</object>-->
+
+                    <ul class="nav nav-tabs mx-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#vue1">App.vue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#vue2">HelloWorld.vue</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="vue1">
+                            <app-code [code]="data2" [lang]="'javascript'"></app-code>
+                        </div>
+                        <div class="tab-pane fade" id="vue2">
+                            <app-code [code]="data2b" [lang]="'javascript'"></app-code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body pt-3 p-0">
+                    <!--        <object data="http://localhost:3000" width="100%" height="330" type="text/html">Could not load</object>-->
+                    <!--        <object data="react-app" width="100%" height="330" type="text/html">Could not load</object>-->
+
+                    <app-framework
+                            url="http://localhost:3000"
+                            description="&lt;HelloWorld /&gt;"
+                    >
+                        <img
+                                width="40"
+                                alt="Vue.js logo"
+                                src="assets/react-logo.svg"
+                        />
+
+                        <span>React</span>
+                    </app-framework>
+
+                    <ul class="nav nav-tabs mx-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#react1">App.js</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#react2">HelloWorld.js</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="react1">
+                            <app-code [code]="data3" [lang]="'javascript'"></app-code>
+                        </div>
+                        <div class="tab-pane fade" id="react2">
+                            <app-code [code]="data3b" [lang]="'javascript'"></app-code>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
+
+<nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Side by side code comparison</a>
+
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Basic Component</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Basic use of Service</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Basic Form</a>
+        </li>
+    </ul>
+</nav>
+
+
+
+

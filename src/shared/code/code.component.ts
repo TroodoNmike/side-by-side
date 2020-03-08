@@ -3,22 +3,22 @@ import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, Vi
 import {CodeHighlightService} from './code-highlight.service';
 
 @Component({
-  selector: 'ngbd-code',
+  selector: 'app-code',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <pre class="language-{{ lang }}"><code #code class="language-{{ lang }}"></code></pre>
   `
 })
-export class NgbdCodeComponent implements AfterViewInit {
+export class CodeComponent implements AfterViewInit {
 
   @ViewChild('code') codeEl: ElementRef<HTMLElement>;
 
   @Input() code = '';
   @Input() lang = '';
 
-  constructor(private _service: CodeHighlightService) { }
+  constructor(private service: CodeHighlightService) { }
 
   ngAfterViewInit() {
-    this.codeEl.nativeElement.innerHTML = this._service.highlight(this.code, this.lang);
+    this.codeEl.nativeElement.innerHTML = this.service.highlight(this.code, this.lang);
   }
 }
