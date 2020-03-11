@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
+import { Event, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'compare';
-  sideBySide = environment.sideBySide;
+  sideBySide = [];
   data0 = require('!raw-loader!./../../framework/angular-app/src/app/app.component.html').default;
   data = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component').default;
   datab = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component.html').default;
@@ -17,4 +18,20 @@ export class AppComponent {
   data2b = require('!raw-loader!./../../framework/vuejs-app/src/components/HelloWorld.vue').default;
   data3 = require('!raw-loader!./../../framework/react-app/src/App.js').default;
   data3b = require('!raw-loader!./../../framework/react-app/src/components/HelloWorld.js').default;
+
+
+  constructor(private router: Router) {
+
+      this.router.events.subscribe((event: Event) => {
+          if (event instanceof NavigationStart) {
+              const host0 = new URL(environment.sideBySide[0]).host;
+              const host1 = new URL(environment.sideBySide[1]).host;
+              const host2 = new URL(environment.sideBySide[2]).host;
+              this.sideBySide[0] = 'http://' + host0 + event.url;
+              this.sideBySide[1] = 'http://' + host1 + event.url;
+              this.sideBySide[2] = 'http://' + host2 + event.url;
+          }
+
+      });
+  }
 }

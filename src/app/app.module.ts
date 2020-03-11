@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CodeModule } from '../shared/code/code.module';
 import { FrameworkModule } from './framework/framework.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -12,7 +13,15 @@ import { FrameworkModule } from './framework/framework.module';
     imports: [
         BrowserModule,
         CodeModule,
-        FrameworkModule
+        FrameworkModule,
+        RouterModule.forRoot([
+            {
+                path: '', component: AppComponent
+            },
+            {
+                path: 'msg', component: AppComponent
+            }
+        ], {useHash: true})
     ],
     providers: [],
     bootstrap: [AppComponent]
