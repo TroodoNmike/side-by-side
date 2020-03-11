@@ -19,6 +19,6 @@ describe('HelloWorldComponent', () => {
     const fixture = TestBed.createComponent(HelloWorldComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain('I am component');
+    expect(compiled.querySelector('p').textContent).toContain('I am hello world component');
   });
 });

@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { CodeModule } from '../shared/code/code.module';
 import { FrameworkModule } from './framework/framework.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       ],
       imports: [
         CodeModule,
-        FrameworkModule
+        FrameworkModule,
+        RouterTestingModule
       ]
     }).compileComponents();
   }));
@@ -22,16 +24,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'compare'`, () => {
+  it(`should have loading property`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('compare');
+    expect(app.loading).toEqual(true);
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Side by side code comparison');
-  });
 });

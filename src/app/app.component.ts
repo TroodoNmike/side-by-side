@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Event, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { continuePath } from '../shared/helper/conitnue-path';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { Event, NavigationEnd, NavigationError, NavigationStart, Router } from '
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'compare';
-  sideBySide = [];
+  loading = true;
+  sideBySide = environment.sideBySide;
   data0 = require('!raw-loader!./../../framework/angular-app/src/app/app.component.html').default;
   data = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component').default;
   datab = require('!raw-loader!./../../framework/angular-app/src/app/hello-world/hello-world.component.html').default;
@@ -24,14 +25,11 @@ export class AppComponent {
 
       this.router.events.subscribe((event: Event) => {
           if (event instanceof NavigationStart) {
-              const host0 = new URL(environment.sideBySide[0]).host;
-              const host1 = new URL(environment.sideBySide[1]).host;
-              const host2 = new URL(environment.sideBySide[2]).host;
-              this.sideBySide[0] = 'http://' + host0 + event.url;
-              this.sideBySide[1] = 'http://' + host1 + event.url;
-              this.sideBySide[2] = 'http://' + host2 + event.url;
+              this.sideBySide[0] = continuePath(environment.sideBySide[0], event.url);
+              this.sideBySide[1] = continuePath(environment.sideBySide[1], event.url);
+              this.sideBySide[2] = continuePath(environment.sideBySide[2], event.url);
+              this.loading = false;
           }
-
       });
   }
 }
