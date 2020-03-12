@@ -1,13 +1,14 @@
 import { continuePath } from './conitnue-path';
 
 describe('Testing path', () => {
-    it('should work with local host and port and provide merge path correctly', () => {
+    it('should work with local host and port and provide merge path correctly to use with hash strategy', () => {
         const valuePathExpected = [
-            ['http://localhost', '/', 'http://localhost/'],
-            ['http://localhost/', '/', 'http://localhost/'],
-            ['http://localhost:8080', '/', 'http://localhost:8080/'],
-            ['http://localhost:8080/service', '/', 'http://localhost:8080/'],
-            ['http://localhost:8080/service', '/service', 'http://localhost:8080/service']
+            ['http://localhost', '/', 'http://localhost/#/'],
+            ['http://localhost/', '/', 'http://localhost/#/'],
+            ['http://localhost:8080', '/', 'http://localhost:8080/#/'],
+            ['http://localhost:8080', '/service', 'http://localhost:8080/#/service'],
+            ['http://localhost:8080/service', '/', 'http://localhost:8080/#/'],
+            ['http://localhost:8080/service', '/service', 'http://localhost:8080/#/service'],
         ];
 
         valuePathExpected.forEach(collection => {
@@ -15,13 +16,13 @@ describe('Testing path', () => {
         });
     });
 
-    it('should work with local folder and merge path correctly', () => {
+    it('should work with local folder and merge path correctly to use with hash strategy', () => {
         const valuePathExpected = [
-            ['angular-app', '/', 'angular-app/'],
-            ['angular-app/', '/', 'angular-app/'],
-            ['angular-app/service', '/', 'angular-app/'],
-            ['angular-app', '/service', 'angular-app/service'],
-            ['angular-app/', '/service', 'angular-app/service'],
+            ['angular-app', '/', 'angular-app/#/'],
+            ['angular-app/', '/', 'angular-app/#/'],
+            ['angular-app/service', '/', 'angular-app/#/'],
+            ['angular-app', '/service', 'angular-app/#/service'],
+            ['angular-app/', '/service', 'angular-app/#/service'],
         ];
 
         valuePathExpected.forEach(collection => {

@@ -24,7 +24,7 @@ import { ParentHelloWorldInputComponent } from './basic/parent-hello-world-input
             {
                 path: 'msg', component: ParentHelloWorldInputComponent,
             },
-        ])
+        ], {useHash: true})
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -8,8 +8,10 @@ export function continuePath(value, path): string {
     if (value.indexOf('://') > 0) {
         const url = new URL(value);
 
-        return url.origin + path;
+        return url.origin + '/#' + path;
     }
 
-    return value.split('/')[0] + path;
+    const cleanPath = value.split('/')[0].replace('#', '');
+
+    return cleanPath + '/#' + path;
 }
