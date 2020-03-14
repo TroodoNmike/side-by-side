@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class FrameworkComponent {
 
     @Input() url: string;
+    @Input() title: string;
     @Input() description: string;
 
     constructor(public sanitizer: DomSanitizer) {

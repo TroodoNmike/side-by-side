@@ -5,6 +5,5 @@ import { Component, Input } from '@angular/core';
     templateUrl: './hello-world-input.component.html',
 })
 export class HelloWorldInputComponent {
-
     @Input() msg;
 }
