@@ -23,12 +23,12 @@ true}">Component with variable</a>
     <div class="row">
         <div class="col-12 col-lg-4 mb-3">
             <div class="card">
-                <div class="card-body pt-3 p-0" *ngIf="selectedComponentRouteMapping.componentData.length > 0">
+                <div class="card-body pt-3 p-0" *ngIf="selectedComponentRouteMapping.title && selectedComponentRouteMapping.angular.componentData">
 
                     <app-framework *ngIf="!loading"
                             [title]="selectedComponentRouteMapping.title"
                             [url]="sideBySide[0]"
-                            [description]="selectedComponentRouteMapping.use"
+                            [description]="selectedComponentRouteMapping.angular.use"
                     >
                         <img
                                 width="40"
@@ -37,39 +37,44 @@ true}">Component with variable</a>
                         />
                         <span>ANGULAR</span>
                     </app-framework>
-                    <ul class="nav nav-tabs mx-3">
-                        <li class="nav-item" *ngFor="let item of selectedComponentRouteMapping.componentData[0].tabsData">
-                            <a class="nav-link active" data-toggle="tab" href="#{{item.title}}" (click)="selectedComponentRouteMapping.activePrismSourceTitle = item.title">{{item.title}}</a>
-                        </li>
 
-                        <li class="nav-item dropdown" *ngIf="selectedComponentRouteMapping.componentData[0].subTabsData.data.length > 0">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{selectedComponentRouteMapping.componentData[0].subTabsData.title}}</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" data-toggle="tab" href="#{{item.title}}" *ngFor="let item of selectedComponentRouteMapping.componentData[0].subTabsData.data">{{item.title}}</a>
-                            </div>
-                        </li>
-                    </ul>
+                    <fieldset class="m-fieldset rounded mx-3 mb-3">
+                        <legend>Files required</legend>
+                        <ul class="nav nav-tabs mx-3">
+                            <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
+                                <ng-container *ngIf="selected.tabsData.length == 1">
+                                    <li class="nav-item" *ngFor="let item of selected.tabsData">
+                                        <a class="nav-link active" data-toggle="tab" href="#angular-{{item.title}}" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
+                                    </li>
+                                </ng-container>
 
-                    <div class="tab-content">
-                        <div class="tab-pane" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === item.title" *ngFor="let item of selectedComponentRouteMapping.componentData[0].tabsData" [id]="item.title">
-                            <app-code [code]="item.source" [lang]="item.lang"></app-code>
+                                <ng-container *ngIf="selected.tabsData.length > 1">
+                                    <li class="nav-item dropdown" *ngIf="selected.tabsData.length > 1">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{selected.title}}</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" data-toggle="tab" href="#angular-sub-{{item.title}}" *ngFor="let item of selected.tabsData" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
+                                        </div>
+                                    </li>
+                                </ng-container>
+
+                            </ng-container>
+                        </ul>
+
+                        <div class="tab-content mb-2">
+                            <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
+                                <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-' + item.title">
+                                    <app-code [code]="item.source" [lang]="item.lang"></app-code>
+                                </div>
+                                <ng-container *ngIf="selected.tabsData.length > 1">
+                                    <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-sub-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-sub-' + item.title">
+                                        <app-code [code]="item.source" [lang]="item.lang"></app-code>
+                                    </div>
+
+                                </ng-container>
+                            </ng-container>
                         </div>
-                        <ng-container *ngIf="selectedComponentRouteMapping.componentData[0].subTabsData.data.length > 0">
-                            <div class="tab-pane" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === item.title" *ngFor="let item of selectedComponentRouteMapping.componentData[0].subTabsData.data" [id]="item.title">
-                                <app-code [code]="item.source" [lang]="item.lang"></app-code>
-                            </div>
+                    </fieldset>
 
-                        </ng-container>
-<!--                        <div class="tab-pane fade" id="home">-->
-<!--                            <app-code [code]="data" [lang]="'typescript'"></app-code>-->
-<!--                        </div>-->
-<!--                        <div class="tab-pane fade" id="menu1">-->
-<!--                            <app-code [code]="datab" [lang]="'html'"></app-code>-->
-<!--                        </div>-->
-<!--                        <div class="tab-pane fade" id="menu2">-->
-<!--                            <app-code [code]="datac" [lang]="'typescript'"></app-code>-->
-<!--                        </div>-->
-                    </div>
                 </div>
 
             </div>
@@ -78,8 +83,9 @@ true}">Component with variable</a>
             <div class="card">
                 <div class="card-body pt-3 p-0">
                     <app-framework *ngIf="!loading"
+                            [title]="selectedComponentRouteMapping.title"
                             [url]="sideBySide[1]"
-                            description="&lt;HelloWorld /&gt;"
+                            [description]="selectedComponentRouteMapping.vueJs.use"
                     >
                         <img
                                 width="40"
@@ -115,6 +121,7 @@ true}">Component with variable</a>
                 <div class="card-body pt-3 p-0">
 
                     <app-framework *ngIf="!loading"
+                            title="Basic Component"
                             [url]="sideBySide[2]"
                             description="&lt;HelloWorld /&gt;"
                     >

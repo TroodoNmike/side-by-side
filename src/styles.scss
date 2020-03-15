@@ -4,3 +4,24 @@ $primary: #6c757d;
 
 @import "~bootstrap";
 
+$spacer: 1rem;
+
+fieldset.m-fieldset {
+  border: 1px solid #b0b0b0;
+  padding: ($spacer * 0.5) ($spacer * 1.5);
+  position: relative;
+
+  legend {
+    font-size: 90%;
+    padding-left: $spacer * 0.25;
+    padding-right: $spacer * 0.25;
+    width: inherit;
+  }
+
+  .second-legend {
+    position: absolute;
+    top: $spacer * 0.5 * -1;
+    right: $spacer * 1.25;
+    background-color: $white;
+  }
+}

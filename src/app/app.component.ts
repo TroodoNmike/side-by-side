@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Event, NavigationStart, Router } from '@angular/router';
 import { continuePath } from '../shared/helper/conitnue-path';
-import {
-    ComponentRouteMappingInterface,
-    SelectedComponentRouteMapping
-} from './page/page-content.inteface';
+import { ComponentRouteMappingInterface, SelectedComponentRouteMapping } from './page/page-content.inteface';
 import { basicComponentTabs } from './page/basic-component.data';
 import { componentWithInputTabs } from './page/component-with-input.data';
 
@@ -29,15 +26,28 @@ export class AppComponent {
     componentRouteMapping: ComponentRouteMappingInterface = {
         '/': {
             title: 'Basic Component',
-            use: '<app-hello-world></app-hello-world>',
-            componentData: basicComponentTabs
+            angular: {
+                use: '<app-hello-world></app-hello-world>',
+                componentData: basicComponentTabs
+            },
+            vueJs: {
+                use: '<HelloWorld />',
+                componentData: basicComponentTabs
+            }
         },
         '/msg': {
             title: 'Component with variable',
-            use: '<app-example ' +
+            angular: {
+                use: '<app-example ' +
                     'msg="I am message">\n' +
-                '</app-example>',
-            componentData: componentWithInputTabs
+                    '</app-example>',
+                componentData: componentWithInputTabs
+            },
+            vueJs: {
+                use: '<HelloWorld msg="I am message" />',
+                componentData: componentWithInputTabs
+            }
+
         },
     };
 
@@ -51,9 +61,10 @@ export class AppComponent {
                 this.sideBySide[1] = continuePath(environment.sideBySide[1], event.url);
                 this.sideBySide[2] = continuePath(environment.sideBySide[2], event.url);
                 this.selectedComponentRouteMapping.title = this.componentRouteMapping[event.url].title;
-                this.selectedComponentRouteMapping.use = this.componentRouteMapping[event.url].use;
-                this.selectedComponentRouteMapping.componentData = this.componentRouteMapping[event.url].componentData;
-                this.selectedComponentRouteMapping.activePrismSourceTitle = this.componentRouteMapping[event.url].componentData[0].tabsData[0].title;
+                this.selectedComponentRouteMapping.vueJs.use = this.componentRouteMapping[event.url].vueJs.use;
+                this.selectedComponentRouteMapping.angular.use = this.componentRouteMapping[event.url].angular.use;
+                this.selectedComponentRouteMapping.angular.componentData = this.componentRouteMapping[event.url].angular.componentData;
+                this.selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + this.componentRouteMapping[event.url].angular.componentData[0].tabsData[0].title;
                 this.loading = false;
             }
         });

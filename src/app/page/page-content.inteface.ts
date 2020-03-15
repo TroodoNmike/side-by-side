@@ -1,25 +1,48 @@
 export class SelectedComponentRouteMapping {
     title: string;
-    use: string;
-    componentData: Array<ComponentTabsDataInterface> = [];
-    activePrismSourceTitle: string;
+    angular: {
+        use: string;
+        componentData: Array<ComponentTabsDataInterface>;
+        activePrismSourceTitle: string;
+    };
+    vueJs: {
+        use: string;
+        componentData: Array<ComponentTabsDataInterface>;
+        activePrismSourceTitle: string;
+    };
+
+
+    constructor() {
+        this.angular = {
+            use: '',
+            componentData: [],
+            activePrismSourceTitle: ''
+        };
+        this.vueJs = {
+            use: '',
+            componentData: [],
+            activePrismSourceTitle: ''
+        };
+    }
 }
 
 export interface ComponentRouteMappingInterface {
     [key: string]: {
         title: string;
-        use: string;
-        componentData: Array<ComponentTabsDataInterface>
+        angular: {
+            use: string;
+            componentData: Array<ComponentTabsDataInterface>
+        },
+        vueJs: {
+            use: string;
+            componentData: Array<ComponentTabsDataInterface>
+        }
     };
 }
 
 export interface ComponentTabsDataInterface {
     title: string;
     tabsData: Array<PrismSource>;
-    subTabsData: {
-        title: string,
-        data: Array<PrismSource>
-    };
 }
 
 export interface PrismSource {
