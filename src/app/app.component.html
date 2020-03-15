@@ -38,42 +38,39 @@ true}">Component with variable</a>
                         <span>ANGULAR</span>
                     </app-framework>
 
-                    <fieldset class="m-fieldset rounded mx-3 mb-3">
-                        <legend>Files required</legend>
-                        <ul class="nav nav-tabs mx-3">
-                            <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
-                                <ng-container *ngIf="selected.tabsData.length == 1">
-                                    <li class="nav-item" *ngFor="let item of selected.tabsData">
-                                        <a class="nav-link active" data-toggle="tab" href="#angular-{{item.title}}" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
-                                    </li>
-                                </ng-container>
-
-                                <ng-container *ngIf="selected.tabsData.length > 1">
-                                    <li class="nav-item dropdown" *ngIf="selected.tabsData.length > 1">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{selected.title}}</a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" data-toggle="tab" href="#angular-sub-{{item.title}}" *ngFor="let item of selected.tabsData" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
-                                        </div>
-                                    </li>
-                                </ng-container>
-
+                    <ul class="nav nav-tabs mx-3">
+                        <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
+                            <ng-container *ngIf="selected.tabsData.length == 1">
+                                <li class="nav-item" *ngFor="let item of selected.tabsData">
+                                    <a class="nav-link active" data-toggle="tab" href="#angular-{{item.title}}" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
+                                </li>
                             </ng-container>
-                        </ul>
 
-                        <div class="tab-content mb-2">
-                            <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
-                                <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-' + item.title">
+                            <ng-container *ngIf="selected.tabsData.length > 1">
+                                <li class="nav-item dropdown" *ngIf="selected.tabsData.length > 1">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{selected.title}}</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" data-toggle="tab" href="#angular-sub-{{item.title}}" *ngFor="let item of selected.tabsData" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
+                                    </div>
+                                </li>
+                            </ng-container>
+
+                        </ng-container>
+                    </ul>
+
+                    <div class="tab-content">
+                        <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
+                            <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-' + item.title">
+                                <app-code [code]="item.source" [lang]="item.lang"></app-code>
+                            </div>
+                            <ng-container *ngIf="selected.tabsData.length > 1">
+                                <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-sub-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-sub-' + item.title">
                                     <app-code [code]="item.source" [lang]="item.lang"></app-code>
                                 </div>
-                                <ng-container *ngIf="selected.tabsData.length > 1">
-                                    <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-sub-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-sub-' + item.title">
-                                        <app-code [code]="item.source" [lang]="item.lang"></app-code>
-                                    </div>
 
-                                </ng-container>
                             </ng-container>
-                        </div>
-                    </fieldset>
+                        </ng-container>
+                    </div>
 
                 </div>
 

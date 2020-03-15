@@ -12,7 +12,7 @@ export const basicComponentTabs: Array<ComponentTabsDataInterface> = [
         ]
     },
     {
-        title: 'Component',
+        title: 'Files',
         tabsData: [
             {
                 title: 'hello-world.component.html',
