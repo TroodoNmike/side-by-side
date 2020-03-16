@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelloWorldComponent } from './hello-world.component';
+import { BasicInputComponent } from './basic-input.component';
 
 @NgModule({
     declarations: [
-        HelloWorldComponent
+        BasicInputComponent
     ],
     exports: [
-        HelloWorldComponent
+        BasicInputComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class HelloWorldModule {
+export class BasicInputModule {
 }

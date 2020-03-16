@@ -2,28 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HelloWorldModule } from './hello-world/hello-world.module';
 import { RouterModule } from '@angular/router';
-import { HelloWorldInputModule } from './hello-world-input/hello-world-input.module';
-import { ParentHelloWorldComponent } from './basic/parent-hello-world.component';
-import { ParentHelloWorldInputComponent } from './basic/parent-hello-world-input.component';
+import { BasicComponent } from './basic/basic.component';
+import { BasicInputModule } from './basic-input/basic-input.module';
+import { ParentBasicComponent } from './parent/parent-basic.component';
+import { ParentBasicInputComponent } from './parent/parent-basic-input.component';
+import { BasicModule } from './basic/basic.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ParentHelloWorldComponent,
-        ParentHelloWorldInputComponent,
+        ParentBasicComponent,
+        ParentBasicInputComponent,
     ],
     imports: [
         BrowserModule,
-        HelloWorldModule,
-        HelloWorldInputModule,
+        BasicModule,
+        BasicInputModule,
         RouterModule.forRoot([
             {
-                path: '', component: ParentHelloWorldComponent
+                path: '', component: BasicComponent
             },
             {
-                path: 'msg', component: ParentHelloWorldInputComponent
+                path: 'msg', component: ParentBasicInputComponent
             },
         ], {useHash: true})
     ],

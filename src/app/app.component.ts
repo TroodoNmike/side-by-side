@@ -3,8 +3,8 @@ import { environment } from '../environments/environment';
 import { Event, NavigationStart, Router } from '@angular/router';
 import { continuePath } from '../shared/helper/conitnue-path';
 import { ComponentRouteMappingInterface, SelectedComponentRouteMapping } from './page/page-content.inteface';
-import { basicComponentTabs } from './page/basic-component.data';
-import { componentWithInputTabs } from './page/component-with-input.data';
+import { basicComponentTabs } from './page/basic.component.data';
+import { basicInputComponentTabs } from './page/basic-input.component.data';
 
 @Component({
     selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent {
         '/': {
             title: 'Basic Component',
             angular: {
-                use: '<app-hello-world></app-hello-world>',
+                use: '<app-basic></app-basic>',
                 componentData: basicComponentTabs
             },
             vueJs: {
@@ -34,14 +34,14 @@ export class AppComponent {
         '/msg': {
             title: 'Component with variable',
             angular: {
-                use: '<app-example ' +
+                use: '<app-basic-input ' +
                     'msg="I am message">\n' +
-                    '</app-example>',
-                componentData: componentWithInputTabs
+                    '</app-basic-input>',
+                componentData: basicInputComponentTabs
             },
             vueJs: {
                 use: '<HelloWorld msg="I am message" />',
-                componentData: componentWithInputTabs
+                componentData: basicInputComponentTabs
             }
 
         },
