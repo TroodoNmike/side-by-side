@@ -16,6 +16,6 @@ prism.hooks.add('before-highlightall', (env) => {
 export class CodeHighlightService {
 
     highlight(code: string, lang: string) {
-        return prism.highlight(code, Prism.languages.typescript, prism.languages[lang]);
+        return prism.highlight(code, Prism.languages[lang], prism.languages[lang]);
     }
 }

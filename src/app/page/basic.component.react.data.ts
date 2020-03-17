@@ -7,7 +7,7 @@ export const basicComponentReactJsTabs: Array<ComponentTabsDataInterface> = [
             {
                 title: 'App.js',
                 source: require('!raw-loader!./../../../framework/react-app/src/App.js').default,
-                lang: 'html',
+                lang: 'javascript',
             },
         ]
     },
@@ -17,7 +17,7 @@ export const basicComponentReactJsTabs: Array<ComponentTabsDataInterface> = [
             {
                 title: 'HelloWorld.js',
                 source: require('!raw-loader!./../../../framework/react-app/src/components/HelloWorld.js').default,
-                lang: 'html',
+                lang: 'javascript',
             },
         ]
     },

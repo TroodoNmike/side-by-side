@@ -68,5 +68,5 @@ export interface ComponentTabsDataInterface {
 export interface PrismSource {
     title: string;
     source: string;
-    lang: 'html' | 'typescript' | 'css';
+    lang: 'html' | 'typescript' | 'css' | 'javascript';
 }
