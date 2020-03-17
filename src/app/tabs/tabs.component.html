@@ -1,0 +1,33 @@
+<ul class="nav nav-tabs mx-3" #tabsUl>
+    <ng-container *ngFor="let selected of selectedComponentRouteMapping.componentData">
+        <ng-container *ngIf="selected.tabsData.length == 1">
+            <li class="nav-item" *ngFor="let item of selected.tabsData">
+                <a class="nav-link" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === idPrefix + '-' + item.title" data-toggle="tab" href="#{{idPrefix}}-{{item.title}}" (click)="clickedSubMenu(item, idPrefix + '-', tabsUl)">{{item.title}}</a>
+            </li>
+        </ng-container>
+
+        <ng-container *ngIf="selected.tabsData.length > 1">
+            <li class="nav-item dropdown" *ngIf="selected.tabsData.length > 1">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="tab" aria-haspopup="true" aria-expanded="false" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === idPrefix + '-sub-' + selected.title">{{selected.title}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" data-toggle="tab" href="#{{idPrefix}}-sub-{{item.title}}" *ngFor="let item of selected.tabsData" (click)="clickedSubMenu(item, idPrefix + '-sub-', tabsUl)" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === idPrefix + '-sub-' + selected.title">{{item.title}}</a>
+                </div>
+            </li>
+        </ng-container>
+
+    </ng-container>
+</ul>
+
+<div class="tab-content">
+    <ng-container *ngFor="let selected of selectedComponentRouteMapping.componentData">
+        <div class="tab-pane" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === idPrefix + '-' + item.title" *ngFor="let item of selected.tabsData" [id]="idPrefix + '-' + item.title">
+            <app-code [code]="item.source" [lang]="item.lang"></app-code>
+        </div>
+        <ng-container *ngIf="selected.tabsData.length > 1">
+            <div class="tab-pane" [class.active]="selectedComponentRouteMapping.activePrismSourceTitle === idPrefix + '-sub-' + item.title" *ngFor="let item of selected.tabsData" [id]="idPrefix + '-sub-' + item.title">
+                <app-code [code]="item.source" [lang]="item.lang"></app-code>
+            </div>
+
+        </ng-container>
+    </ng-container>
+</div>

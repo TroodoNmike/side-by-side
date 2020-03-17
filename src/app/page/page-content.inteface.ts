@@ -10,6 +10,11 @@ export class SelectedComponentRouteMapping {
         componentData: Array<ComponentTabsDataInterface>;
         activePrismSourceTitle: string;
     };
+    react: {
+        use: string;
+        componentData: Array<ComponentTabsDataInterface>;
+        activePrismSourceTitle: string;
+    };
 
 
     constructor() {
@@ -23,7 +28,18 @@ export class SelectedComponentRouteMapping {
             componentData: [],
             activePrismSourceTitle: ''
         };
+        this.react = {
+            use: '',
+            componentData: [],
+            activePrismSourceTitle: ''
+        };
     }
+}
+
+export class SelectedComponentSingleRouteMapping {
+    use: string;
+    componentData: Array<ComponentTabsDataInterface> = [];
+    activePrismSourceTitle: string;
 }
 
 export interface ComponentRouteMappingInterface {
@@ -34,6 +50,10 @@ export interface ComponentRouteMappingInterface {
             componentData: Array<ComponentTabsDataInterface>
         },
         vueJs: {
+            use: string;
+            componentData: Array<ComponentTabsDataInterface>
+        },
+        react: {
             use: string;
             componentData: Array<ComponentTabsDataInterface>
         }

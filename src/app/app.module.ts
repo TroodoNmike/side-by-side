@@ -5,15 +5,16 @@ import { AppComponent } from './app.component';
 import { CodeModule } from '../shared/code/code.module';
 import { FrameworkModule } from './framework/framework.module';
 import { RouterModule } from '@angular/router';
+import { TabsModule } from './tabs/tabs.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
-        CodeModule,
         FrameworkModule,
+        TabsModule,
         RouterModule.forRoot([
             {
                 path: '', component: AppComponent

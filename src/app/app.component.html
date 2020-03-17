@@ -38,39 +38,7 @@ true}">Component with input</a>
                         <span>ANGULAR</span>
                     </app-framework>
 
-                    <ul class="nav nav-tabs mx-3">
-                        <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
-                            <ng-container *ngIf="selected.tabsData.length == 1">
-                                <li class="nav-item" *ngFor="let item of selected.tabsData">
-                                    <a class="nav-link active" data-toggle="tab" href="#angular-{{item.title}}" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
-                                </li>
-                            </ng-container>
-
-                            <ng-container *ngIf="selected.tabsData.length > 1">
-                                <li class="nav-item dropdown" *ngIf="selected.tabsData.length > 1">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{selected.title}}</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" data-toggle="tab" href="#angular-sub-{{item.title}}" *ngFor="let item of selected.tabsData" (click)="selectedComponentRouteMapping.angular.activePrismSourceTitle = 'angular-' + item.title">{{item.title}}</a>
-                                    </div>
-                                </li>
-                            </ng-container>
-
-                        </ng-container>
-                    </ul>
-
-                    <div class="tab-content">
-                        <ng-container *ngFor="let selected of selectedComponentRouteMapping.angular.componentData">
-                            <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-' + item.title">
-                                <app-code [code]="item.source" [lang]="item.lang"></app-code>
-                            </div>
-                            <ng-container *ngIf="selected.tabsData.length > 1">
-                                <div class="tab-pane" [class.active]="selectedComponentRouteMapping.angular.activePrismSourceTitle === 'angular-sub-' + item.title" *ngFor="let item of selected.tabsData" [id]="'angular-sub-' + item.title">
-                                    <app-code [code]="item.source" [lang]="item.lang"></app-code>
-                                </div>
-
-                            </ng-container>
-                        </ng-container>
-                    </div>
+                    <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.angular" idPrefix="angular"></app-tabs>
 
                 </div>
 
@@ -93,23 +61,8 @@ true}">Component with input</a>
                         <span>Vue.js</span>
                     </app-framework>
 
-                    <ul class="nav nav-tabs mx-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#vue1">App.vue</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#vue2">HelloWorld.vue</a>
-                        </li>
-                    </ul>
+                    <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.vueJs" idPrefix="vuejs"></app-tabs>
 
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="vue1">
-                            <app-code [code]="data2" [lang]="'javascript'"></app-code>
-                        </div>
-                        <div class="tab-pane fade" id="vue2">
-                            <app-code [code]="data2b" [lang]="'javascript'"></app-code>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -118,9 +71,9 @@ true}">Component with input</a>
                 <div class="card-body pt-3 p-0">
 
                     <app-framework *ngIf="!loading"
-                            title="Basic Component"
+                                   [title]="selectedComponentRouteMapping.title"
                             [url]="sideBySide[2]"
-                            description="&lt;HelloWorld /&gt;"
+                                   [description]="selectedComponentRouteMapping.react.use"
                     >
                         <img
                                 width="55"
@@ -131,23 +84,7 @@ true}">Component with input</a>
                         <span>React</span>
                     </app-framework>
 
-                    <ul class="nav nav-tabs mx-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#react1">App.js</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#react2">HelloWorld.js</a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="react1">
-                            <app-code [code]="data3" [lang]="'javascript'"></app-code>
-                        </div>
-                        <div class="tab-pane fade" id="react2">
-                            <app-code [code]="data3b" [lang]="'javascript'"></app-code>
-                        </div>
-                    </div>
+                    <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.react" idPrefix="react"></app-tabs>
 
                 </div>
             </div>

@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  sideBySide: ['http://localhost:4200', 'http://localhost:8080', 'http://localhost:3000']
+    production: false,
+    sideBySide: ['http://localhost:4200', 'http://localhost:8080', 'http://localhost:3000']
 };
 
 /*
