@@ -25,7 +25,7 @@ export class AppComponent {
                 componentData: basicComponentTabs
             },
             vueJs: {
-                use: '<HelloWorld />',
+                use: '<Basic />',
                 componentData: basicComponentVueJsTabs
             },
             react: {
@@ -42,7 +42,7 @@ export class AppComponent {
                 componentData: basicInputComponentTabs
             },
             vueJs: {
-                use: '<HelloWorld msg="I am message" />',
+                use: '<BasicInput msg="I am message" />',
                 componentData: basicInputComponentTabs
             },
             react: {

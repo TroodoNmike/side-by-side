@@ -12,11 +12,11 @@ export const basicComponentReactJsTabs: Array<ComponentTabsDataInterface> = [
         ]
     },
     {
-        title: 'uniqueReactId',
+        title: 'uniqueReactId2',
         tabsData: [
             {
-                title: 'HelloWorld.js',
-                source: require('!raw-loader!./../../../framework/react-app/src/components/HelloWorld.js').default,
+                title: 'Basic.js',
+                source: require('!raw-loader!./../../../framework/react-app/src/components/Basic.js').default,
                 lang: 'javascript',
             },
         ]
