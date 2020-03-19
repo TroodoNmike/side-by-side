@@ -36,9 +36,7 @@ export class AppComponent {
         '/msg': {
             title: 'Component with variable',
             angular: {
-                use: '<app-basic-input ' +
-                    'msg="I am message">\n' +
-                    '</app-basic-input>',
+                use: '<app-basic-input msg="I am message"></app-basic-input>',
                 componentData: basicInputComponentTabs
             },
             vueJs: {
