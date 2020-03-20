@@ -7,6 +7,8 @@ import { basicComponentTabs } from './page/basic.component.data';
 import { basicInputComponentTabs } from './page/basic-input.component.data';
 import { basicComponentVueJsTabs } from './page/basic.component.vuejs.data';
 import { basicComponentReactJsTabs } from './page/basic.component.react.data';
+import { basicInputComponentReactJsTabs } from './page/basic-input.component.react.data';
+import { basicInputComponentVueJsTabs } from './page/basic-input.component.vuejs.data';
 
 @Component({
     selector: 'app-root',
@@ -34,18 +36,18 @@ export class AppComponent {
             }
         },
         '/msg': {
-            title: 'Component with variable',
+            title: 'Component with input',
             angular: {
                 use: '<app-basic-input msg="I am message"></app-basic-input>',
                 componentData: basicInputComponentTabs
             },
             vueJs: {
                 use: '<BasicInput msg="I am message" />',
-                componentData: basicInputComponentTabs
+                componentData: basicInputComponentVueJsTabs
             },
             react: {
                 use: '<HelloWorld msg="I am message" />',
-                componentData: basicInputComponentTabs
+                componentData: basicInputComponentReactJsTabs
             }
 
         },
