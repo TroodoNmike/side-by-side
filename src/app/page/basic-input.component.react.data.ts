@@ -5,8 +5,8 @@ export const basicInputComponentReactJsTabs: Array<ComponentTabsDataInterface> =
         title: 'uniqueReactId',
         tabsData: [
             {
-                title: 'App.js',
-                source: require('!raw-loader!./../../../framework/react-app/src/App.js').default,
+                title: 'ParentApp.js',
+                source: require('!raw-loader!./../../../framework/react-app/src/parent/ParentBasicInput.js').default,
                 lang: 'javascript',
             },
         ]
@@ -15,8 +15,8 @@ export const basicInputComponentReactJsTabs: Array<ComponentTabsDataInterface> =
         title: 'uniqueReactId2',
         tabsData: [
             {
-                title: 'BasicInput.js',
-                source: require('!raw-loader!./../../../framework/react-app/src/components/BasicInput.js').default,
+                title: 'AppBasicInput.js',
+                source: require('!raw-loader!./../../../framework/react-app/src/components/AppBasicInput.js').default,
                 lang: 'javascript',
             },
         ]

@@ -27,11 +27,11 @@ export class AppComponent {
                 componentData: basicComponentTabs
             },
             vueJs: {
-                use: '<Basic />',
+                use: '<AppBasic />',
                 componentData: basicComponentVueJsTabs
             },
             react: {
-                use: '<HelloWorld />',
+                use: '<AppBasic />',
                 componentData: basicComponentReactJsTabs
             }
         },
@@ -42,11 +42,11 @@ export class AppComponent {
                 componentData: basicInputComponentTabs
             },
             vueJs: {
-                use: '<BasicInput msg="I am message" />',
+                use: '<AppBasicInput msg="I am message" />',
                 componentData: basicInputComponentVueJsTabs
             },
             react: {
-                use: '<HelloWorld msg="I am message" />',
+                use: '<AppBasicInput msg="I am message" />',
                 componentData: basicInputComponentReactJsTabs
             }
 

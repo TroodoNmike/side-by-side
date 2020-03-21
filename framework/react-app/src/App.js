@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import AppBasic from "./components/Basic";
-import AppBasicInput from "./components/BasicInput";
+import AppParentBasic from "./parent/ParentBasic";
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link, HashRouter
+    HashRouter
 } from "react-router-dom";
+import AppParentBasicInput from "./parent/ParentBasicInput";
 
 function App() {
   return (
@@ -15,10 +14,10 @@ function App() {
         <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route path="/msg">
-                <AppBasicInput msg={'I am message'} />
+                <AppParentBasicInput />
             </Route>
             <Route path="/">
-                <AppBasic />
+                <AppParentBasic />
             </Route>
         </Switch>
         </HashRouter>

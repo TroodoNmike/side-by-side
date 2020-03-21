@@ -1,9 +1,9 @@
 import {shallowMount} from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Basic from '@/components/Basic.vue'
 
-describe('HelloWorld.vue', () => {
+describe('Basic.vue', () => {
   it('renders expected text', () => {
-    const wrapper = shallowMount(HelloWorld, {
+    const wrapper = shallowMount(Basic, {
       propsData: { }
     });
     expect(wrapper.text()).toMatch('I am component')

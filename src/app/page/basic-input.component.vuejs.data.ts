@@ -5,7 +5,7 @@ export const basicInputComponentVueJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueId',
         tabsData: [
             {
-                title: 'App.vue',
+                title: 'BasicInputParent.vue',
                 source: require('!raw-loader!./../../../framework/vuejs-app/src/parent/BasicInputParent.vue').default,
                 lang: 'html',
             },
@@ -15,8 +15,8 @@ export const basicInputComponentVueJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueId2',
         tabsData: [
             {
-                title: 'BasicInput.vue',
-                source: require('!raw-loader!./../../../framework/vuejs-app/src/components/BasicInput.vue').default,
+                title: 'AppBasicInput.vue',
+                source: require('!raw-loader!./../../../framework/vuejs-app/src/components/AppBasicInput.vue').default,
                 lang: 'html',
             },
         ]

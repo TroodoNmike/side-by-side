@@ -5,8 +5,8 @@ export const basicComponentReactJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueReactId',
         tabsData: [
             {
-                title: 'App.js',
-                source: require('!raw-loader!./../../../framework/react-app/src/App.js').default,
+                title: 'AppParent.js',
+                source: require('!raw-loader!./../../../framework/react-app/src/parent/ParentBasic.js').default,
                 lang: 'javascript',
             },
         ]
@@ -15,8 +15,8 @@ export const basicComponentReactJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueReactId2',
         tabsData: [
             {
-                title: 'Basic.js',
-                source: require('!raw-loader!./../../../framework/react-app/src/components/Basic.js').default,
+                title: 'AppBasic.js',
+                source: require('!raw-loader!./../../../framework/react-app/src/components/AppBasic.js').default,
                 lang: 'javascript',
             },
         ]

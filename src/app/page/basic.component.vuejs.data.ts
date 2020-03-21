@@ -5,8 +5,8 @@ export const basicComponentVueJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueId',
         tabsData: [
             {
-                title: 'App.vue',
-                source: require('!raw-loader!./../../../framework/vuejs-app/src/App.vue').default,
+                title: 'BasicParent.vue',
+                source: require('!raw-loader!./../../../framework/vuejs-app/src/parent/BasicParent.vue').default,
                 lang: 'html',
             },
         ]
@@ -15,8 +15,8 @@ export const basicComponentVueJsTabs: Array<ComponentTabsDataInterface> = [
         title: 'uniqueId2',
         tabsData: [
             {
-                title: 'HelloWorld.vue',
-                source: require('!raw-loader!./../../../framework/vuejs-app/src/components/HelloWorld.vue').default,
+                title: 'AppBasic.vue',
+                source: require('!raw-loader!./../../../framework/vuejs-app/src/components/AppBasic.vue').default,
                 lang: 'html',
             },
         ]

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import AppBasic from "../components/AppBasic";
 
-class AppBasic extends Component {
+class AppParentBasic extends Component {
 
     render() {
         return (
-            <p>I am basic component</p>
+            <AppBasic />
         );
 
     }
 }
 
-export default AppBasic;
+export default AppParentBasic;

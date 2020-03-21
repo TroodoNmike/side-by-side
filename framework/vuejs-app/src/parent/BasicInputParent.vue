@@ -1,16 +1,16 @@
 <template>
     <div>
-        <BasicInput msg="I am message" />
+        <AppBasicInput msg="I am message" />
     </div>
 </template>
 
 <script>
-import BasicInput from '../components/BasicInput';
+import AppBasicInput from '../components/AppBasicInput';
 
 export default {
   name: 'BasicInputParent',
     components: {
-        BasicInput
+        AppBasicInput
     }
 }
 </script>
