@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # use nodejs and angular cli
+    - name: Angular Github Actions
+      uses: mayur-rawte/github-angular-actions@latest
+
+    - name: npm install for angular-app
+      working-directory: ./framework/angular-app
+      run: npm install
+
+    - name: npm install for react-app
+      working-directory: ./framework/react-app
+      run: npm install
+
+    - name: npm install for vuejs-app
+      working-directory: ./framework/vuejs-app
+      run: npm install
+
+    - name: Run npm install in root and trigger deploy
+      run: |
+        npm install
+        make deploy
+
+    - name: Deploy to github pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist/side-by-side
