@@ -1,5 +1,5 @@
 <template>
-    <p>I am component</p>
+    <p>I am basic component</p>
 </template>
 
 <script>

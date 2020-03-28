@@ -6,6 +6,9 @@ npm-install:
 
 tests:
 		./node_modules/.bin/ng test --watch=false --browsers=ChromeHeadless
+		cd framework/angular-app && ./node_modules/.bin/ng test --watch=false --browsers=ChromeHeadless
+		cd framework/react-app && npm run test
+		cd framework/vuejs-app && npm run test:unit
 
 build-prod:
 		npm run lint
