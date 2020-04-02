@@ -6,7 +6,7 @@ import { SelectedComponentSingleRouteMapping } from '../page/page-content.intefa
 @Component({
     selector: 'app-stack-blitz',
     templateUrl: './stack-blitz.component.html',
-    styleUrls: ['./stack-blitz.component.css']
+    styleUrls: ['./stack-blitz.component.scss']
 })
 export class StackBlitzComponent {
 

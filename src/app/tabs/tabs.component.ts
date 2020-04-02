@@ -3,8 +3,7 @@ import { SelectedComponentSingleRouteMapping } from '../page/page-content.intefa
 
 @Component({
     selector: 'app-tabs',
-    templateUrl: './tabs.component.html',
-    styleUrls: ['./tabs.component.css']
+    templateUrl: './tabs.component.html'
 })
 export class TabsComponent implements OnInit {
 
