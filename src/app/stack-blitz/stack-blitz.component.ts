@@ -10,6 +10,7 @@ import { SelectedComponentSingleRouteMapping } from '../page/page-content.intefa
 })
 export class StackBlitzComponent {
 
+    @Input() title: string;
     @Input() selectedComponentRouteMapping: SelectedComponentSingleRouteMapping = new SelectedComponentSingleRouteMapping();
 
     constructor() {
@@ -100,8 +101,8 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
         return {
             files,
-            title: 'Dynamically Generated Project',
-            description: 'Created with <3 by the StackBlitz SDK!',
+            title: this.title,
+            description: 'Side by side',
             template: 'angular-cli',
             dependencies: {}
         };

@@ -39,7 +39,7 @@ true}">Component with input</a>
                     </app-framework>
 
 
-                    <app-stack-blitz [selectedComponentRouteMapping]="selectedComponentRouteMapping.angular"></app-stack-blitz>
+                    <app-stack-blitz [selectedComponentRouteMapping]="selectedComponentRouteMapping.angular" [title]="selectedComponentRouteMapping.title"></app-stack-blitz>
 
                     <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.angular" idPrefix="angular"></app-tabs>
 
@@ -64,7 +64,7 @@ true}">Component with input</a>
                         <span>Vue.js</span>
                     </app-framework>
 
-                    <app-stack-blitz></app-stack-blitz>
+                    <app-stack-blitz [title]="selectedComponentRouteMapping.title"></app-stack-blitz>
 
                     <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.vueJs" idPrefix="vuejs"></app-tabs>
 
@@ -89,7 +89,7 @@ true}">Component with input</a>
                         <span>React</span>
                     </app-framework>
 
-                    <app-stack-blitz></app-stack-blitz>
+                    <app-stack-blitz [title]="selectedComponentRouteMapping.title"></app-stack-blitz>
 
                     <app-tabs [selectedComponentRouteMapping]="selectedComponentRouteMapping.react" idPrefix="react"></app-tabs>
 
